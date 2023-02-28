@@ -1,0 +1,18 @@
+.searchDiv {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 10rem;
+
+}
+
+.searchDiv * {
+    margin: 0.5rem auto;
+
+}
+
+.searchDiv select {
+    width: 15rem;
+    height: 2rem;
+    border-radius: 0.6rem;
+}

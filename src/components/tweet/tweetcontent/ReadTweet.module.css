@@ -1,0 +1,11 @@
+.read-tweet {
+    width: 48%;
+    border: 1px solid rgba(209, 197, 197, 0.3);
+    height: 100vh;
+    margin: 0 1rem;
+}
+
+.ul {
+    width: 100%;
+    padding: 0;
+}

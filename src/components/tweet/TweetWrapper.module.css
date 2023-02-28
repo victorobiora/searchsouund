@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper * {
+    width: 25%;
+  
+}
+
+body {
+    background-color: white;
+    color: black;
+}

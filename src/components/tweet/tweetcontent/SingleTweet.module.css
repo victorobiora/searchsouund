@@ -1,0 +1,52 @@
+.tweetList{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid  rgba(209, 197, 197, 0.3);
+    padding-bottom: 1rem;
+}
+
+.tweetList * {
+    width: 100%;
+}
+
+
+
+.image{
+    width: 11%;
+    padding: 0 1rem;
+}
+
+.tweetData{
+  width: 90%;
+  display: flex;
+   flex-direction: column;
+}
+
+.name{
+    display: flex;
+    flex-direction: row;
+    height: 2rem;
+}
+
+.tweetName {
+    max-width: 4rem;
+    color: black;
+    font-weight: bold;
+    margin-right: 0.34rem;
+}
+.tweetUsername {
+    color: rgb(157, 161, 165);
+}
+
+.imageContainer {
+    height: 3rem;
+    width: 3rem;
+}
+
+.imageContainer img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+

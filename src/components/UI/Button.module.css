@@ -1,0 +1,9 @@
+.but {
+    background-color: rgb(122, 247, 122);
+    color: #282c34;
+    width: 4rem;
+    height: 2rem;
+    border-color: transparent;
+    cursor: pointer;
+    border-radius: 0.6rem;
+}
