@@ -4,36 +4,36 @@ import winston from '../components/UI/images/cactus.jpg'
 const nationsList = [
     {
         title: 'Canada',
-        id: 'CAD'
+        id: 'CA'
     },
     {
         title: 'Ghana',
         id: 'GH'
     },
     {
-    title: 'Nigeria',
-    id: 'NG'
-},
-{
-    title: 'South Korea',
-    id: 'SRK'
-},
-{
-    title: 'South Africa',
-    id: 'SA'
-},
-{
-    title: 'United Kingdom',
-    id: 'UK'
-},
-{
-    title: 'United States',
-    id: 'US'
-}
+        title: 'Nigeria',
+        id: 'NG'
+    },
+    {
+        title: 'South Korea',
+        id: 'KR'
+    },
+    {
+        title: 'South Africa',
+        id: 'ZA'
+    },
+    {
+        title: 'United Kingdom',
+        id: 'GB'
+    },
+    {
+        title: 'United States',
+        id: 'US'
+    }
 ]
 
 const twitterData = [
-    { 
+    {
         name: 'Winston',
         username: 'Winston12',
         tweet: `North Heavy fighting rages north of Bakhmut assaults in the directions of Bohdanivka, Orikhovo-Vasylivka and Zaliznyans'ke also assaults south from the northern road.East:
@@ -44,7 +44,7 @@ const twitterData = [
     }
 ]
 
-export {twitterData}
+export { twitterData }
 
 
 

@@ -5,7 +5,8 @@ import {twitterData} from './nationsList'
 
 const searchInitialState = {
     nationsList,
-    selectedCountry: null,
+    selectedCountry: 'CA',
+    isDataLoaded: false,
     artists: [],
 }
 
@@ -19,6 +20,10 @@ const searchSlice = createSlice({
     reducers: {
        pickCountry(state, action){
         state.selectedCountry = action.payload
+       },
+       setArtists(state, action){
+        state.artists = action.payload
+        state.isDataLoaded = true;
        }
     }
 })
@@ -33,16 +38,17 @@ const tweetSlice = createSlice ({
 
 const tokenSlice = createSlice({
     name: 'token',
-    initialState: '',
+    initialState: { token: ''},
     reducers: {
         setState(state,action){
-            state = action.payload
+            state.token = action.payload
         }
     }
 
 })
 
-export const searchActions = searchSlice.actions
+export const searchActions = searchSlice.actions;
+export const tokenAction = tokenSlice.actions;
 
 const store = configureStore({
     reducer: {

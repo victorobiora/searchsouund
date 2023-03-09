@@ -1,9 +1,19 @@
+body {
+    background-color: #282c34 !important;
+    color: white;
+}
+
 .searchDiv {
     display: flex;
     flex-direction: column;
     position: relative;
     top: 10rem;
+    margin-bottom: 13rem;
+    
+}
 
+.searchDiv h1 {
+    color: rgb(122, 247, 122);
 }
 
 .searchDiv * {
