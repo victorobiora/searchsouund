@@ -11,6 +11,10 @@ const nationsList = [
         id: 'GH'
     },
     {
+        title: 'India',
+        id: 'IN'  
+    },
+    {
         title: 'Nigeria',
         id: 'NG'
     },

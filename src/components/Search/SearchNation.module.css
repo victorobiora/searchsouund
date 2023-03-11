@@ -26,3 +26,9 @@ body {
     height: 2rem;
     border-radius: 0.6rem;
 }
+
+.styleSpinner {
+  position: relative;
+  left: 47%;
+   display: inline-block;
+}

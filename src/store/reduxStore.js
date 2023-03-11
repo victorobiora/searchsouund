@@ -6,8 +6,10 @@ import {twitterData} from './nationsList'
 const searchInitialState = {
     nationsList,
     selectedCountry: 'CA',
-    isDataLoaded: false,
+    isDataLoaded: null,
     artists: [],
+    isSearchError: false,
+    isSearchErrorMessage: null
 }
 
 const tweetInitialState = {
@@ -24,6 +26,14 @@ const searchSlice = createSlice({
        setArtists(state, action){
         state.artists = action.payload
         state.isDataLoaded = true;
+       },
+       setErrorMessage(state, action){
+        state.isSearchError = true
+        state.message = {errText:action.payload.message,
+            errStatusCode: action.payload.status}
+       },
+       setSpinner(state, action){
+        state.isDataLoaded = false
        }
     }
 })

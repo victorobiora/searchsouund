@@ -1,17 +1,25 @@
 import { searchActions } from "./reduxStore"
 
+console.log(window.navigator.onLine)
+
 export const updateMusicians = (nation, token) => {
     return async (dispatch) => {
 
         try {
-            const getCategory = await fetch(`https://api.spotify.com/v1/browse/categories?country=${nation}&limit=3`, {
+
+            dispatch(searchActions.setSpinner())
+
+          const getCategory = await fetch(`https://api.spotify.com/v1/browse/categories?country=${nation}&limit=3`, {
                 method: 'GET',
                 headers: { 'Authorization': 'Bearer ' + token }
 
             })
+            console.log(getCategory.status)
 
             if (!getCategory.ok) {
-                throw new Error('we couldnt get the categories')
+                throw new Error({ 
+                    message: 'we could not get the categories',
+                    status: getCategory.status})
             }
 
             const cat = await getCategory.json()
@@ -24,7 +32,9 @@ export const updateMusicians = (nation, token) => {
             });
 
             if (!getPlaylist.ok) {
-                throw new Error('we couldnt get the Playlist')
+                throw new Error({ 
+                    message: 'we could not get the playlists',
+                    status: getPlaylist.status})
             }
 
             const parseCatID = await getPlaylist.json();
@@ -39,7 +49,9 @@ export const updateMusicians = (nation, token) => {
             })
 
             if (!getTracks.ok) {
-                throw new Error('we could not get the tracks')
+                throw new Error({ 
+                    message: 'we could not get the tracks',
+                    status: getTracks.status})
             }
 
             const parseTracks = await getTracks.json();

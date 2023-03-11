@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { searchActions } from '../../store/reduxStore';
 import { updateMusicians } from '../../store/thunks';
 import LoadedArtists from './LoadedArtists';
+import { TailSpin } from 'react-loader-spinner'
 
 const SearchNation = props => {
 
@@ -25,15 +26,19 @@ const SearchNation = props => {
     }
 
     return <>
-     <div className={classes.searchDiv}>
-        <label htmlFor="select-nation"><h1>Choose a country and find out the artists
-            ruling the charts over there!</h1></label>
-        <select name="" id="select-nation" onChange={changeCountry}>
-            {nationsArr.map(nation => (<option value={nation.id} key={nation.id}>{nation.title}</option>))}
-        </select>
-        <Button onClick={renderArtists}>Go</Button>
-    </div>
-    {isDataLoaded && <LoadedArtists/>}
+        <div className={classes.searchDiv}>
+            <label htmlFor="select-nation"><h1>Choose a country and find out the artists
+                ruling the charts over there!</h1></label>
+            <select name="" id="select-nation" onChange={changeCountry}>
+                {nationsArr.map(nation => (<option value={nation.id} key={nation.id}>{nation.title}</option>))}
+            </select>
+            <Button onClick={renderArtists}>Go</Button>
+        </div>
+        {isDataLoaded === false && <div className={classes.styleSpinner}>
+        <TailSpin height="80" width="80" color="#4fa94d" ariaLabel="tail-spin-loading"
+                  radius="1" wrapperStyle={{}} wrapperClass="" visible={true}/>
+        </div>}
+        {isDataLoaded && <LoadedArtists />}
     </>
 }
 
