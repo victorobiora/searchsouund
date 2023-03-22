@@ -1,0 +1,32 @@
+.sectionM {
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+   margin-top: 7rem;
+}
+
+.sectionM > div{
+  border: 3px solid #25be70;
+  padding: 0.4rem;
+  text-align: center;
+  color:#25be70;
+  margin: 0.5rem;
+  border-radius: 0.6rem;
+}
+
+.player {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.player > div {
+    height: 3rem;
+    width: 3rem;
+    margin: 0 1.4rem;
+}
+
+.player > div img {
+    height: 100%;
+    width: 100%;
+}
