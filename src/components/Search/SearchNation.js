@@ -5,6 +5,7 @@ import { searchActions } from "../../store/reduxStore";
 import { updateMusicians } from "../../store/thunks";
 import LoadedArtists from "./LoadedArtists";
 import { TailSpin } from "react-loader-spinner";
+import { songLoader } from "../../store/thunks";
 
 const SearchNation = (props) => {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const SearchNation = (props) => {
 
   const renderArtists = (event) => {
     dispatch(updateMusicians(country, token));
+    dispatch(songLoader(1, token))
   };
 
   return (

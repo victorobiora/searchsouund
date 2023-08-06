@@ -11,8 +11,12 @@ import { tokenAction } from "./store/reduxStore";
 import MusicPlayer from "./components/Player/MusicPlayer";
 import RootLayout from "./components/customhook/Root";
 
+
 const clientID = "e059534c9cfc42d393d39aa22780394a";
 const clientSecret = "bab4f094593f421082c77f211ee43808";
+const client = clientID + ":" + clientSecret
+
+console.log(client)
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +40,7 @@ function App() {
         }
 
         const response = await getToken.json();
+        console.log(response.access_token)
 
         dispatch(tokenAction.setState(response.access_token));
       } catch (err) {

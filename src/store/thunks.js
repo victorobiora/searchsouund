@@ -1,4 +1,5 @@
 import { searchActions } from "./reduxStore";
+import { json } from "react-router-dom";
 
 console.log(window.navigator.onLine);
 
@@ -6,6 +7,15 @@ export const updateMusicians = (nation, token) => {
   return async (dispatch) => {
     try {
       dispatch(searchActions.setSpinner());
+
+      const checkP = await fetch(`https://api.spotify.com/v1/browse/categories/toplists/playlists?country=${nation}`,
+      {
+        method: "GET",
+        headers: { Authorization: "Bearer " + token }
+      })
+
+      const viewP = await checkP.json()
+      console.log(viewP)
 
       const getCategory = await fetch(
         `https://api.spotify.com/v1/browse/categories?country=${nation}&limit=3`,
@@ -24,6 +34,7 @@ export const updateMusicians = (nation, token) => {
       }
 
       const cat = await getCategory.json();
+      console.log(cat)
       const getCatID = cat.categories.items[1].id;
 
       const getPlaylist = await fetch(
@@ -107,5 +118,25 @@ export const updateMusicians = (nation, token) => {
     } catch (err) {
       console.log(err);
     }
+  };
+};
+
+export const songLoader = (arg, token) => {
+  return async (dispatch) => {
+    const argId = "https://api.spotify.com/v1/tracks/3vLPMgS9AtFGiYm07KMEaP"
+    try {
+      const getTrack = await fetch(
+        argId,  {
+          method: "GET",
+          headers: { Authorization: "Bearer " + token },
+        }
+      );
+      if(!getTrack.ok){
+        throw json({message: 'We could not get track', status: 401})
+      }
+      const getTrackData = await getTrack.json()
+
+      console.log(getTrackData)
+    } catch (err) {}
   };
 };
