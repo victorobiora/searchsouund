@@ -12,8 +12,8 @@ import MusicPlayer from "./components/Player/MusicPlayer";
 import RootLayout from "./components/customhook/Root";
 
 
-const clientID = "e059534c9cfc42d393d39aa22780394a";
-const clientSecret = "bab4f094593f421082c77f211ee43808";
+const clientID = "e059534c9cfc42d393d39aa22780394a";  //this is wrong 
+const clientSecret = "bab4f094593f421082c77f211ee43808"; //this is wrong practice
 const client = clientID + ":" + clientSecret
 
 console.log(client)
